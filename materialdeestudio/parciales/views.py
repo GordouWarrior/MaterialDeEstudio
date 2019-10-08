@@ -1,7 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.views.generic import ListView
+from .models import MaterialDeEstudio
 
 
-def index(request):
-    return HttpResponse('Home page.')
+class HomePageView(ListView):
+    model = MaterialDeEstudio
+    template_name = 'home.html'
 
